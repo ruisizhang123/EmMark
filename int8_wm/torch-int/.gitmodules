@@ -1,0 +1,7 @@
+[submodule "submodules/cutlass"]
+	path = submodules/cutlass
+	url = https://github.com/NVIDIA/cutlass.git
+	ignore = dirty
+[submodule "torch_int/ft_gemm/pybind11"]
+	path = torch_int/ft_gemm/pybind11
+	url = https://github.com/pybind/pybind11.git

@@ -14,19 +14,15 @@ Step1: Preprocess to acquire the quantized model along with the activations
 
 ```bash
 $ cd int4_wm
-$ python save.py --model_path facebook/opt-350m --dump_activation opt-350m-act.pt \ 
-		--w_bit 4 --q_group_size 128 \
-    --load_awq awq_cache/opt-350m-w4-g128.pt \
-    --q_backend real --dump_quant quant_cache/opt-350m-w4-g128-awq.pt
+$ bash scripts/opt_watermark.sh opt-2.7b ours /path/save/llm
 ```
 
 Step2: Watermark the model
 
+Change `status` variable from `save` to `watermark`.
+
 ```bash
-$ python watermark.py --model_path facebook/opt-350m \
-    --tasks wikitext,hellaswag,piqa,winogrande,lambada_openai \
-    --w_bit 4 --q_group_size 128 \
-    --load_quant quant_cache/opt-350m-w4-g128-awq.pt
+$ bash scripts/opt_watermark.sh opt-2.7b ours /path/save/llm
 ```
 
 **INT8 Quantization WM** 
@@ -37,15 +33,15 @@ Step1: Preprocess to acquire the quantized model along with the activations
 
 ```bash
 $ cd int8_wm
-$ python save.py # for OPT models
-$ python save_llama.py # for LLAMA models
+$ bash scripts/opt_watermark.sh opt-2.7b ours /path/save/llm
 ```
 
 Step2: Watermark the model
 
+Change `status` variable from `save` to `watermark`.
+
 ```bash
-$ python watermark.py # to watermark OPT models
-$ python warermark_llama.py # to watermark LLAMA models
+$ bash scripts/opt_watermark.sh opt-2.7b ours /path/save/llm
 ```
 
 #### Acknowledge
