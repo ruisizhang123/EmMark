@@ -53,10 +53,11 @@ Our code builds heavily upon  [AWQ](https://github.com/mit-han-lab/llm-awq), [LL
 If you found our code/paper helpful, please kindly cite:
 
 ```latex
-@article{zhang2024emmark,
-  title={EmMark: Robust Watermarks for IP Protection of Embedded Quantized Large Language Models},
+@inproceedings{zhang2024emmark,
+  title={EmMark: Robust watermarks for IP protection of embedded quantized large language models},
   author={Zhang, Ruisi and Koushanfar, Farinaz},
-  journal={arXiv preprint arXiv:2402.17938},
+  booktitle={Proceedings of the 61st ACM/IEEE Design Automation Conference},
+  pages={1--6},
   year={2024}
 }
 ```
